@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int a, b, c;
+    
+    printf("Type a numbers:\n");
+    scanf("%d %d %d", &a, &b, &c);
+    
+    printf("\na = %d, b = %d, c = %d", a, b, c);
+    
+    int multiplication = a*b*c;
+    
+    printf("\n\nThe multiplication is: %d", multiplication);
+    
+    int zero = (a == 0 || b == 0||c == 0);
+    
+    int sign_n =  ((a > 0) * (b > 0) * (c > 0)) || (a && b < 0) || (a && c < 0) || (b && c < 0);
+    
+    int sign = sign_n * 2 - 1 + zero * 1;
+    
+    printf("\n%d", sign);
+    
+    return 0; 
+}
+
+/*Вывод1:
+Type a numbers:
+-4 5 9
+
+a = -4, b = 5, c = 9
+
+The multiplication is: -180
+-1
+
+Вывод2:
+Type a numbers:
+0 4 6
+
+a = 0, b = 4, c = 6
+
+The multiplication is: 0
+0
+
+Вывод 3:
+Type a numbers:
+-4 -5 6
+
+a = -4, b = -5, c = 6
+
+The multiplication is: 120
+1
+*/
